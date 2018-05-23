@@ -11,4 +11,8 @@ public class Atm {
 		}
 		return true;
 	}
+
+	public String getPin() {
+		return requiredPin;
+	}
 }
