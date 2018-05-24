@@ -21,11 +21,27 @@ public class AtmTest {
 	}
 	
 	@Test
-	public void shouldIncreaseBalance() {
+	public void shouldIncreaseBalanceByFifty() {
 		BigDecimal underTest = atm.deposit(new BigDecimal(50.0));
 		
-		BigDecimal depositAmount = new BigDecimal(150.0);
+		BigDecimal expectedBankBalance = new BigDecimal(150.0);
 		
-		Assert.assertEquals(depositAmount, underTest);
+		Assert.assertEquals(expectedBankBalance, underTest);
+	}
+	
+	@Test
+	public void shouldDecreaseBalanceByFifty() {
+		BigDecimal underTest = atm.withdrawl(new BigDecimal(50.0));
+		
+		BigDecimal expectedBankBalance = new BigDecimal(50.0);
+		
+		Assert.assertEquals(expectedBankBalance, underTest);
+	}
+	@Test
+	public void shouldDisplayCurrentBalance( ) {
+		BigDecimal underTest = atm.balanceInquiry();
+		BigDecimal expectedBankBalance = new BigDecimal(100.00);
+		Assert.assertEquals(expectedBankBalance, underTest);
+		
 	}
 }

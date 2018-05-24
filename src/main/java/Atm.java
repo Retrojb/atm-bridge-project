@@ -17,7 +17,16 @@ public class Atm {
 	}
 
 	public BigDecimal deposit(BigDecimal amount) {
-		balance.add(amount);
+		balance = balance.add(amount);
+		return balance;
+	}
+
+	public BigDecimal withdrawl(BigDecimal amount) {
+		balance = balance.subtract(amount);
+		return balance;
+	}
+
+	public BigDecimal balanceInquiry() {
 		return balance;
 	}
 }
